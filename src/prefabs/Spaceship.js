@@ -1,7 +1,7 @@
 // Spaceship prefab! Hells Yeah
 class Spaceship extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, frame, pointValue) {
-        super(scene, x, y, frame, pointValue);
+    constructor(scene, x, y, texture, frame, pointValue) {
+        super(scene, x, y, texture, frame, pointValue);
 
         // Manually add our object to the scene
         scene.add.existing(this);
@@ -12,7 +12,7 @@ class Spaceship extends Phaser.GameObjects.Sprite {
 
     update() {
         //move spaceship left
-        this.x -= 3;
+        this.x -= game.settings.spaceshipSpeed;
 
         //wraparound on Left edge
         if (this.x <= 0 - this.width) {
